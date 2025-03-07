@@ -1,13 +1,17 @@
 require "test_helper"
 
 class CartsControllerTest < ActionDispatch::IntegrationTest
-  test "should get show" do
-    get carts_show_url
-    assert_response :success
+  test "should create a cart if not existing" do
+    get products_path
+    assert_not_nil session[:cart_id]
+    assert Cart.exists?(id: session[:cart_id])
   end
 
-  test "should get update" do
-    get carts_update_url
-    assert_response :success
+  test "should use the same cart across requests" do
+    get products_path
+    cart_id = session[:cart_id]
+
+    get products_path
+    assert_equal cart_id, session[:cart_id]
   end
 end

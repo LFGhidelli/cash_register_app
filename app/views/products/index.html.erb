@@ -1,1 +1,16 @@
-<h1>hello world</h1>
+<h1>Available Products</h1>
+
+<h6><%= link_to "Check Cart", cart_path(@cart) %></h6>
+
+
+  <% @products.each do |product| %>
+
+      <%= product.name %> - <%= number_to_currency(product.price) %>
+
+      <%= form_with url: cart_path(@cart), method: :patch do |f| %>
+        <%= hidden_field_tag :product_id, product.id %>
+        <%= number_field_tag :quantity, 1, min: 1 %>
+        <%= submit_tag "Add to Cart" %>
+      <% end %>
+
+  <% end %>
