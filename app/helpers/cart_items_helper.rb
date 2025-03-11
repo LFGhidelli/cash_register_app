@@ -1,5 +1,5 @@
 module CartItemsHelper
-  def strikethrough_if(item)
+  def strikethrough_if_offer_valid(item)
     if item.product.name == "Green Tea" && item.quantity >=2
       "text-decoration-line-through"
     elsif item.product.name == "Strawberries" && item.quantity >=3

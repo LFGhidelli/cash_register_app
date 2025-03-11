@@ -10,8 +10,8 @@
             <tr>
               <th>Product</th>
               <th>Qty</th>
+              <th>Price</th>
               <th>Subtotal</th>
-              <th>Discount Price</th>
             </tr>
           </thead>
           <tbody>
@@ -19,24 +19,16 @@
               <tr>
                 <td><%= cart_item.product.name %></td>                  
                 <td><%= cart_item.quantity %></td>
-                <td class="<%= strikethrough_if(cart_item) %>">
+                <td class="<%= strikethrough_if_offer_valid(cart_item) %>">
                   <%= number_to_currency(cart_item.quantity * cart_item.product.price) %>
                 </td>
-                <td><%= cart_item.special_offer_rules %></td>
+                <td><%= number_to_currency(cart_item.special_offer_rules) %></td>
                 <td><%= link_to "Delete", cart_item_path(cart_item), method: :DELETE, data: { turbo_method: :delete, confirm: "Tem certeza?" }, class: "btn btn-danger btn-sm" %></td>
               </tr>
             <% end %>
           </tbody>
         </table>
-        <h5 class="text-right mt-3">
-          
-          <% if special_offer_total(@cart) > 0 %>
-            <p>Total: <strong class="text-decoration-line-through"><%= total_price(@cart) %></strong></p>
-            <p>Discounted Total: <strong> <%= special_offer_total(@cart) %> </strong>🎉</p>
-          <% else %>
-            <p>Total: <strong class=""><%= total_price(@cart) %> </strong></p>
-          <% end %>
-        </h5>
+        <h5 class="text-right mt-3">Total: <strong> <%= number_to_currency(special_offer_total(@cart)) %> </strong></h5>
       <% else %>
         <p class="text-muted">Your cart is empty.</p>
       <% end %>

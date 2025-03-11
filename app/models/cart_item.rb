@@ -17,18 +17,24 @@ class CartItem < ApplicationRecord
       if quantity >= 2
         paid_items = (quantity / 2) + (quantity % 2)
         (product.price * paid_items).round(2)
+      else
+        product.price * quantity
       end
     end
 
     def strawberry_offer
       if quantity >= 3
         (quantity * 4.5).round(2)
+      else
+        product.price * quantity
       end
     end
 
     def coffee_offer
       if quantity >= 3
         ((product.price * quantity) * 0.67).round(2)
+      else
+        product.price * quantity
       end
     end
 end
