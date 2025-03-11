@@ -15,5 +15,6 @@ Rails.application.routes.draw do
 
   resources :products, only: [ :index ]
   resources :carts
+  resources :cart_items, only: [ :destroy ]
   root "products#index"
 end

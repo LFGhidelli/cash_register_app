@@ -10,6 +10,6 @@ class CartsController < ApplicationController
 
     @cart.add_product(product, quantity)
 
-    redirect_to root_path, notice: "#{product.name} added to the cart!"
+    redirect_to root_path
   end
 end

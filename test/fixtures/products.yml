@@ -1,9 +1,5 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  price: 9.99
-
-two:
-  name: MyString
-  price: 9.99
+green_tea:
+  name: Green Tea
+  price: 3.11

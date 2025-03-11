@@ -2,10 +2,5 @@
 
 one:
   cart: one
-  product: one
-  quantity: 1
-
-two:
-  cart: two
-  product: two
+  product: green_tea
   quantity: 1
