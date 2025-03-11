@@ -1,25 +1,49 @@
-# cash_register_app
-# README
+Cash Register Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple, flexible, and extendable Cash Register application built using Ruby on Rails with PostgreSQL as the database.
 
-Things you may want to cover:
+Features
 
-* Ruby version
+Product Catalog: List products on a single view with the ability to select quantities and add items directly to the shopping cart.
 
-* System dependencies
+Shopping Cart: Efficiently manage items, update quantities, and calculate total prices.
 
-* Configuration
+Special Pricing Rules:
 
-* Database creation
+Buy One Get One Free (BOGOF) for Green Tea.
 
-* Database initialization
+Bulk discount for Strawberries: €4.50 each when purchasing 3 or more.
 
-* How to run the test suite
+Discounted Coffee: 2/3 of the original price when buying 3 or more coffees.
 
-* Services (job queues, cache servers, search engines, etc.)
+Technology Stack
 
-* Deployment instructions
+Backend: Ruby on Rails
 
-* ...
+Database: PostgreSQL
+
+Testing Framework: Minitest (TDD methodology)
+
+Frontend: Bootstrap
+
+Setup Instructions
+
+Prerequisites
+
+Ruby (3.0+ recommended)
+
+Rails (7.0+ recommended)
+
+PostgreSQL
+
+Installation
+
+Clone this repository:
+
+git clone https://github.com/yourusername/cash_register.git
+cd cash_register
+bundle install
+yarn install
+rails db:create
+rails db:migrate
+rails db:seed
