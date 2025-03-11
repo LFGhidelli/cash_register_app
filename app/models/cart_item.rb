@@ -2,8 +2,6 @@ class CartItem < ApplicationRecord
   belongs_to :cart
   belongs_to :product
 
-  include PricingRules
-
   def special_offer_rules
     if product.name == "Green Tea"
       green_tea_offer
