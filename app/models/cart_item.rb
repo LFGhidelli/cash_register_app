@@ -32,7 +32,7 @@ class CartItem < ApplicationRecord
 
     def coffee_offer
       if quantity >= 3
-        ((product.price * quantity) * 0.67).round(2)
+        ((product.price * quantity) * 2/3).round(2)
       else
         product.price * quantity
       end

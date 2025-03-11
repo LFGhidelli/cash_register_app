@@ -25,7 +25,7 @@ class CartItemTest < ActiveSupport::TestCase
     products(:green_tea).update_columns(name: "Coffee", price: 11.23)
 
     cart.add_product(products(:green_tea), 3)
-    assert_equal "$22.57", number_to_currency(cart.cart_items.first.special_offer_rules)
+    assert_equal "$22.46", number_to_currency(cart.cart_items.first.special_offer_rules)
   end
 
   test "strawberries special offer rule" do
